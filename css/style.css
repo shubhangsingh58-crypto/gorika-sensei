@@ -1,0 +1,3099 @@
+/* =======================================
+   GORIKA SENSEI
+   FANTASY WONDERLAND
+   COMPLETE MAIN STYLESHEET
+======================================= */
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Georgia', serif;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 15%,
+            #f0e3ff 0%,
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 15% 75%,
+            #d8c3f0 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            ellipse at 85% 65%,
+            #cbb6eb 0%,
+            transparent 50%
+        ),
+        linear-gradient(
+            145deg,
+            #d9c6ed,
+            #c5b0e2,
+            #d8bfe9,
+            #bfaee0
+        );
+
+    color: #fff;
+}
+
+/* =========================================
+   FAIRYTALE BACKGROUND
+========================================= */
+
+.fairytale-background {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+
+    background:
+        radial-gradient(
+            ellipse at 15% 100%,
+            rgba(91, 65, 145, 0.38),
+            transparent 48%
+        ),
+        radial-gradient(
+            ellipse at 85% 100%,
+            rgba(70, 100, 145, 0.32),
+            transparent 48%
+        ),
+        radial-gradient(
+            ellipse at 50% 90%,
+            rgba(190, 130, 210, 0.22),
+            transparent 55%
+        );
+}
+
+/* ENCHANTED FOREST SILHOUETTES */
+
+.fairytale-background::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 48%;
+    pointer-events: none;
+    opacity: 0.42;
+
+    background:
+        /* Tree canopies */
+        radial-gradient(ellipse 100px 170px at 5% 65%, #292347 98%, transparent 100%),
+        radial-gradient(ellipse 115px 190px at 18% 70%, #30264f 98%, transparent 100%),
+        radial-gradient(ellipse 95px 155px at 32% 75%, #292347 98%, transparent 100%),
+        radial-gradient(ellipse 120px 190px at 72% 72%, #30264f 98%, transparent 100%),
+        radial-gradient(ellipse 110px 175px at 88% 68%, #292347 98%, transparent 100%),
+        radial-gradient(ellipse 130px 200px at 100% 75%, #30264f 98%, transparent 100%),
+
+        /* Tree trunks */
+        linear-gradient(90deg, transparent 4%, #292347 4.5%, #292347 6%, transparent 6.5%),
+        linear-gradient(90deg, transparent 17%, #30264f 17.5%, #30264f 19%, transparent 19.5%),
+        linear-gradient(90deg, transparent 87%, #292347 87.5%, #292347 89%, transparent 89.5%),
+
+        /* Forest ground */
+        linear-gradient(to top, #292347 0%, #30264f 20%, transparent 85%);
+
+    background-repeat: no-repeat;
+}
+
+.dreamy-glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.28),
+        rgba(233, 207, 255, 0.12),
+        transparent 70%
+    );
+
+    filter: blur(25px);
+}
+
+/* =========================================
+   DREAMY CLOUDS
+========================================= */
+
+.cloud {
+    position: absolute;
+    width: 240px;
+    height: 75px;
+    border-radius: 100px;
+
+    background: rgba(230, 210, 255, 0.23);
+
+    filter: blur(24px);
+
+    animation: cloudFloat 24s ease-in-out infinite alternate;
+}
+
+.cloud-one {
+    top: 15%;
+    left: -50px;
+    animation-duration: 27s;
+}
+
+.cloud-two {
+    top: 65%;
+    right: -60px;
+    animation-duration: 32s;
+}
+
+.cloud-three {
+    top: 85%;
+    left: 35%;
+    animation-duration: 29s;
+}
+
+@keyframes cloudFloat {
+    from {
+        transform: translateX(-20px);
+    }
+
+    to {
+        transform: translateX(70px);
+    }
+}
+
+/* =========================================
+   TWINKLING STARS
+========================================= */
+
+#stars-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.twinkle-star {
+    position: absolute;
+    color: #fff;
+
+    text-shadow:
+        0 0 5px #fff,
+        0 0 12px #fff,
+        0 0 22px #e9d5ff;
+
+    animation: starTwinkle var(--duration) ease-in-out var(--delay) infinite alternate;
+}
+
+@keyframes starTwinkle {
+    0% {
+        opacity: 0.25;
+        transform: scale(0.7);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.35);
+    }
+}
+
+/* =========================================
+   FLOATING BUTTERFLIES
+========================================= */
+
+#butterflies-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.fairy-butterfly {
+    position: absolute;
+    font-size: var(--size);
+
+    filter:
+        drop-shadow(0 0 8px rgba(255, 255, 255, 0.9));
+
+    animation: butterflyFloat var(--duration) ease-in-out var(--delay) infinite alternate;
+}
+
+@keyframes butterflyFloat {
+    0% {
+        transform: translate(0, 0) rotate(-12deg);
+    }
+
+    50% {
+        transform: translate(35px, -45px) rotate(12deg);
+    }
+
+    100% {
+        transform: translate(-20px, 25px) rotate(-8deg);
+    }
+}
+
+/* =========================================
+   SHOOTING METEORS
+========================================= */
+
+#meteors-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.meteor {
+    position: absolute;
+    width: 110px;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0),
+        #fff,
+        rgba(255, 255, 255, 0)
+    );
+
+    box-shadow:
+        0 0 8px #fff,
+        0 0 15px #e9d5ff;
+
+    transform: rotate(-35deg);
+
+    animation: meteorShoot 1.6s linear forwards;
+}
+
+@keyframes meteorShoot {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0) rotate(-35deg);
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-250px, 250px) rotate(-35deg);
+    }
+}
+
+/* =========================================
+   MAGICAL ENTRANCE
+========================================= */
+
+.entrance {
+    position: relative;
+    z-index: 2;
+
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+    text-align: center;
+}
+
+/* ENTRANCE CONTENT */
+
+.entrance-content {
+    width: 100%;
+    max-width: 850px;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+
+    padding: 20px;
+
+    animation: entranceAppear 2s ease both;
+}
+
+@keyframes entranceAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* WELCOME LABEL */
+
+.welcome-label {
+    color: #fff;
+
+    font-size: 14px;
+    letter-spacing: 5px;
+
+    margin-bottom: 30px;
+
+    text-shadow:
+        0 0 8px #a77ad1,
+        0 0 18px #fff;
+}
+
+/* MAIN TITLE */
+
+.entrance h1 {
+    font-size: clamp(42px, 8vw, 78px);
+
+    font-weight: normal;
+    letter-spacing: 7px;
+
+    color: #fff;
+
+    text-shadow:
+        0 0 10px #fff,
+        0 0 22px #d8aaff,
+        0 0 40px #a56bd4,
+        0 0 58px rgba(213, 174, 255, 0.35);
+
+    margin-bottom: 10px;
+}
+
+/* TITLE DECORATION */
+
+.title-decoration {
+    color: #fff;
+
+    font-size: 20px;
+    letter-spacing: 5px;
+
+    margin: 30px 0;
+
+    text-shadow:
+        0 0 10px #fff,
+        0 0 20px #d7aaff;
+}
+
+/* DESCRIPTION */
+
+.entrance-description {
+    max-width: 600px;
+
+    margin: auto;
+
+    color: #fff;
+
+    font-size: clamp(16px, 2.5vw, 21px);
+    line-height: 1.9;
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 0 8px rgba(113, 70, 150, 0.8),
+        0 0 18px rgba(255, 255, 255, 0.7);
+}
+
+/* ENTER BUTTON */
+
+#enter-world {
+    margin-top: 42px;
+
+    padding: 17px 35px;
+
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.19);
+
+    color: #fff;
+
+    font-size: 13px;
+    font-family: inherit;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px rgba(255, 255, 255, 0.35),
+        inset 0 0 12px rgba(255, 255, 255, 0.15);
+
+    transition:
+        background 0.4s ease,
+        box-shadow 0.4s ease,
+        transform 0.4s ease;
+}
+
+#enter-world span {
+    margin-left: 8px;
+}
+
+#enter-world:hover {
+    background: rgba(255, 255, 255, 0.32);
+
+    box-shadow:
+        0 0 20px rgba(255, 255, 255, 0.7),
+        0 0 35px rgba(209, 167, 255, 0.6);
+
+    transform: translateY(-3px);
+}
+
+#enter-world:disabled {
+    opacity: 0.85;
+    cursor: default;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media screen and (max-width: 600px) {
+
+    .entrance {
+        padding: 18px;
+    }
+
+    .entrance-content {
+        padding: 0;
+    }
+
+    .welcome-label {
+        font-size: 11px;
+        letter-spacing: 3px;
+        margin-bottom: 25px;
+    }
+
+    .entrance h1 {
+        font-size: clamp(34px, 10vw, 48px);
+        letter-spacing: 4px;
+    }
+
+    .title-decoration {
+        font-size: 15px;
+        margin: 25px 0;
+    }
+
+    .entrance-description {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    #enter-world {
+        padding: 15px 22px;
+        font-size: 11px;
+        letter-spacing: 2px;
+        margin-top: 32px;
+    }
+}
+
+/* =========================================
+   PART 2 : SURPRISE REVEAL
+========================================= */
+
+.surprise-reveal {
+    position: relative;
+    z-index: 2;
+
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 20px;
+    text-align: center;
+}
+
+/* HIDDEN SECTION CONTROL */
+
+.surprise-reveal[hidden],
+.secret-message[hidden] {
+    display: none !important;
+}
+
+/* REVEAL CONTENT */
+
+.reveal-content {
+    width: 100%;
+    max-width: 850px;
+    padding: 25px;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+
+    animation: revealAppear 1.8s ease both;
+}
+
+@keyframes revealAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* REVEAL LABEL */
+
+.reveal-label {
+    color: #fff;
+    font-size: 13px;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+
+    text-shadow:
+        0 0 8px #a77ad1,
+        0 0 18px #fff;
+}
+
+/* REVEAL HEADING */
+
+.reveal-content h2 {
+    color: #fff;
+
+    font-size: clamp(32px, 6vw, 58px);
+    font-weight: normal;
+    letter-spacing: 4px;
+    line-height: 1.4;
+
+    text-shadow:
+        0 0 10px #fff,
+        0 0 22px #d8aaff,
+        0 0 40px #a56bd4;
+}
+
+/* DECORATION */
+
+.reveal-decoration {
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 5px;
+
+    margin: 30px 0;
+
+    text-shadow:
+        0 0 10px #fff,
+        0 0 20px #d7aaff;
+}
+
+/* DESCRIPTION */
+
+.reveal-description {
+    max-width: 620px;
+    margin: auto;
+
+    color: #fff;
+
+    font-size: clamp(16px, 2.5vw, 21px);
+    line-height: 1.9;
+    letter-spacing: 1px;
+
+    white-space: pre-line;
+
+    text-shadow:
+        0 0 8px rgba(113, 70, 150, 0.8),
+        0 0 18px rgba(255, 255, 255, 0.7);
+}
+
+/* DISCOVER BUTTON */
+
+#discover-secret,
+#continue-journey {
+    margin-top: 42px;
+
+    padding: 17px 32px;
+
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.19);
+
+    color: #fff;
+
+    font-family: inherit;
+    font-size: 12px;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px rgba(255, 255, 255, 0.35),
+        inset 0 0 12px rgba(255, 255, 255, 0.15);
+
+    transition: all 0.4s ease;
+}
+
+#discover-secret span,
+#continue-journey span {
+    margin-left: 8px;
+}
+
+#discover-secret:hover,
+#continue-journey:hover {
+    background: rgba(255, 255, 255, 0.32);
+
+    box-shadow:
+        0 0 20px rgba(255, 255, 255, 0.7),
+        0 0 35px rgba(209, 167, 255, 0.6);
+
+    transform: translateY(-3px);
+}
+
+/* SECRET MESSAGE */
+
+.secret-message {
+    max-width: 680px;
+    margin: 45px auto 0;
+
+    padding: 30px 25px;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 0 25px rgba(255, 255, 255, 0.15),
+        inset 0 0 25px rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    animation: secretAppear 1.5s ease both;
+}
+
+@keyframes secretAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* FLOWER */
+
+.secret-flower {
+    font-size: 42px;
+    margin-bottom: 18px;
+
+    filter:
+        drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+
+    animation: flowerGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes flowerGlow {
+    from {
+        transform: scale(1);
+        filter: drop-shadow(0 0 5px #fff);
+    }
+
+    to {
+        transform: scale(1.12);
+        filter: drop-shadow(0 0 16px #fff);
+    }
+}
+
+/* SECRET HEADING */
+
+.secret-message h3 {
+    color: #fff;
+
+    font-size: clamp(21px, 4vw, 29px);
+    font-weight: normal;
+    letter-spacing: 3px;
+
+    margin-bottom: 22px;
+
+    text-shadow:
+        0 0 10px #fff,
+        0 0 20px #c99aff;
+}
+
+/* SECRET TEXT */
+
+.secret-message p {
+    color: #fff;
+
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 0.5px;
+
+    white-space: pre-line;
+
+    text-shadow:
+        0 0 8px rgba(113, 70, 150, 0.8);
+}
+
+/* MOBILE RESPONSIVE */
+
+@media screen and (max-width: 600px) {
+
+    .surprise-reveal {
+        padding: 25px 16px;
+    }
+
+    .reveal-content {
+        padding: 5px;
+    }
+
+    .reveal-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+        margin-bottom: 25px;
+    }
+
+    .reveal-content h2 {
+        font-size: 32px;
+        letter-spacing: 2px;
+    }
+
+    .reveal-decoration {
+        font-size: 15px;
+        margin: 25px 0;
+    }
+
+    .reveal-description {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    #discover-secret,
+    #continue-journey {
+        padding: 15px 20px;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        margin-top: 32px;
+    }
+
+    .secret-message {
+        margin-top: 35px;
+        padding: 25px 18px;
+    }
+
+    .secret-message p {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+      }
+/* =========================================
+   PART 3 : ENCHANTED BIRTHDAY LETTER
+========================================= */
+
+.birthday-letter {
+    position: relative;
+    z-index: 2;
+
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.birthday-letter[hidden],
+.letter-paper[hidden] {
+    display: none !important;
+}
+
+.letter-content {
+    width: 100%;
+    max-width: 850px;
+    padding: 25px;
+
+    animation: letterSectionAppear 1.8s ease both;
+}
+
+@keyframes letterSectionAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* LABEL */
+
+.letter-label {
+    color: #fff;
+    font-size: 13px;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+
+    text-shadow:
+        0 0 8px #a77ad1,
+        0 0 18px #fff;
+}
+
+/* HEADING */
+
+.letter-content h2 {
+    color: #fff;
+
+    font-size: clamp(35px, 7vw, 58px);
+    font-weight: normal;
+    letter-spacing: 4px;
+
+    text-shadow:
+        0 0 10px #fff,
+        0 0 22px #d8aaff,
+        0 0 40px #a56bd4;
+}
+
+.letter-decoration {
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 5px;
+    margin: 25px 0 45px;
+
+    text-shadow: 0 0 15px #fff;
+}
+
+/* =========================================
+   MAGICAL ENVELOPE
+========================================= */
+
+.envelope-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.envelope {
+    position: relative;
+
+    width: 260px;
+    height: 175px;
+
+    margin: 20px auto 25px;
+
+    cursor: pointer;
+
+    filter:
+        drop-shadow(0 12px 22px rgba(95, 52, 133, 0.3));
+
+    animation: envelopeFloat 3s ease-in-out infinite;
+}
+
+@keyframes envelopeFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.envelope-back {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        135deg,
+        #c9a3e8,
+        #a979cc
+    );
+
+    border-radius: 10px;
+}
+
+.envelope-paper {
+    position: absolute;
+
+    width: 88%;
+    height: 120px;
+
+    left: 6%;
+    bottom: 12px;
+
+    background: #fff4ff;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #bb81d5;
+    font-size: 38px;
+
+    box-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 130px solid transparent;
+    border-right: 130px solid transparent;
+    border-top: 105px solid #e6cafa;
+
+    transform-origin: top center;
+
+    z-index: 4;
+}
+
+.envelope-front {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        145deg,
+        #d9b9f0,
+        #b98bd9
+    );
+
+    clip-path: polygon(
+        0 0,
+        50% 57%,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+
+    border-radius: 10px;
+    z-index: 3;
+}
+
+.envelope-heart {
+    position: absolute;
+
+    top: 48%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    color: #fff;
+    font-size: 30px;
+
+    z-index: 5;
+
+    text-shadow: 0 0 12px #fff;
+}
+
+.envelope-hint {
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 1px;
+
+    text-shadow: 0 0 10px #a77ad1;
+}
+
+/* =========================================
+   OPEN LETTER BUTTON
+========================================= */
+
+#open-letter,
+#next-chapter {
+    margin-top: 30px;
+
+    padding: 16px 30px;
+
+    border: 1px solid rgba(255,255,255,0.85);
+    border-radius: 50px;
+
+    background: rgba(255,255,255,0.19);
+
+    color: #fff;
+
+    font-family: inherit;
+    font-size: 12px;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px rgba(255,255,255,0.35),
+        inset 0 0 12px rgba(255,255,255,0.15);
+
+    transition: all 0.4s ease;
+}
+
+#open-letter:hover,
+#next-chapter:hover {
+    background: rgba(255,255,255,0.35);
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 20px #fff,
+        0 0 35px #d5aaff;
+}
+
+/* =========================================
+   LETTER PAPER
+========================================= */
+
+.letter-paper {
+    width: 100%;
+    max-width: 650px;
+
+    margin: 35px auto 0;
+    padding: 40px 35px;
+
+    text-align: left;
+
+    border: 1px solid rgba(255,255,255,0.65);
+    border-radius: 18px;
+
+    background: linear-gradient(
+        145deg,
+        #fffaff,
+        #f7eaff,
+        #f1ddff
+    );
+
+    box-shadow:
+        0 0 25px rgba(255,255,255,0.5),
+        0 15px 45px rgba(88,49,120,0.2);
+
+    color: #79528e;
+
+    animation: paperReveal 1.5s ease both;
+}
+
+@keyframes paperReveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.letter-top-flower {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 22px;
+}
+
+.letter-paper h3 {
+    font-size: 25px;
+    font-weight: normal;
+    color: #9a67b6;
+
+    margin-bottom: 22px;
+}
+
+.letter-paper p {
+    font-size: 16px;
+    line-height: 2;
+    white-space: pre-line;
+    color: #765489;
+}
+
+.letter-signature {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    margin-top: 30px;
+
+    font-size: 15px;
+    line-height: 1.9;
+    color: #9064a8;
+}
+
+.letter-signature strong {
+    font-weight: normal;
+    color: #a36dbb;
+}
+
+#next-chapter {
+    display: block;
+    margin: 35px auto 0;
+
+    background: linear-gradient(
+        135deg,
+        #bd91da,
+        #a779c8
+    );
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media screen and (max-width: 600px) {
+
+    .birthday-letter {
+        padding: 30px 15px;
+    }
+
+    .letter-content {
+        padding: 5px;
+    }
+
+    .letter-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .letter-content h2 {
+        font-size: 34px;
+        letter-spacing: 2px;
+    }
+
+    .letter-decoration {
+        font-size: 15px;
+        margin: 25px 0 35px;
+    }
+
+    .envelope {
+        transform: scale(0.9);
+        margin: 10px auto 20px;
+    }
+
+    .letter-paper {
+        padding: 30px 22px;
+    }
+
+    .letter-paper h3 {
+        font-size: 22px;
+    }
+
+    .letter-paper p {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+}
+
+/* =========================================
+   PART 4 : UNIVERSE CARDS
+========================================= */
+
+.universe-cards {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    padding: 90px 20px 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.universe-cards[hidden],
+.memory-card-message[hidden] {
+    display: none !important;
+}
+
+.universe-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+    margin: auto;
+}
+
+.universe-label {
+    color: #e9d6ff;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+    text-shadow: 0 0 12px #e8bfff;
+}
+
+.universe-content h2 {
+    color: #fff0ff;
+    font-size: clamp(30px, 6vw, 48px);
+    letter-spacing: 3px;
+    font-weight: 600;
+    text-shadow:
+        0 0 12px #e5b8ff,
+        0 0 30px #bd8bff;
+}
+
+.universe-decoration {
+    color: #f7d8ff;
+    font-size: 20px;
+    margin: 18px 0;
+    text-shadow: 0 0 12px #eabaff;
+}
+
+.universe-description {
+    color: #f1e4ff;
+    font-size: 16px;
+    line-height: 1.9;
+    max-width: 540px;
+    margin: 0 auto 45px;
+    text-shadow: 0 0 10px rgba(220, 174, 255, 0.5);
+}
+
+/* CARDS GRID */
+
+.memory-cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+}
+
+/* INDIVIDUAL MEMORY CARD */
+
+.memory-card {
+    position: relative;
+    min-width: 0;
+    padding: 2px;
+    border-radius: 22px;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 224, 255, 0.75),
+        rgba(179, 135, 255, 0.35),
+        rgba(255, 202, 242, 0.65)
+    );
+    box-shadow:
+        0 0 18px rgba(218, 166, 255, 0.22),
+        0 0 35px rgba(174, 120, 255, 0.12);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.memory-card:hover {
+    transform: translateY(-7px);
+    box-shadow:
+        0 0 25px rgba(238, 196, 255, 0.5),
+        0 0 45px rgba(185, 139, 255, 0.3);
+}
+
+.memory-card-trigger {
+    width: 100%;
+    min-height: 205px;
+    border: none;
+    border-radius: 20px;
+    padding: 25px 15px;
+    background: linear-gradient(
+        145deg,
+        rgba(75, 48, 116, 0.82),
+        rgba(112, 75, 151, 0.78),
+        rgba(85, 53, 132, 0.88)
+    );
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: inherit;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.memory-card-trigger:hover {
+    background: linear-gradient(
+        145deg,
+        rgba(112, 75, 151, 0.92),
+        rgba(142, 98, 178, 0.9),
+        rgba(104, 67, 150, 0.95)
+    );
+}
+
+.memory-card-icon {
+    font-size: 36px;
+    margin-bottom: 17px;
+    filter: drop-shadow(0 0 10px rgba(255, 223, 255, 0.8));
+    animation: memoryFloat 3s ease-in-out infinite;
+}
+
+.memory-card-number {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #eacbff;
+    margin-bottom: 12px;
+}
+
+.memory-card-title {
+    font-size: 17px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    color: #fff3ff;
+    text-shadow: 0 0 12px rgba(255, 212, 255, 0.5);
+}
+
+.memory-card-hint {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #e8d2ff;
+    margin-top: 16px;
+}
+
+/* OPENED MEMORY MESSAGE */
+
+.memory-card-message {
+    padding: 22px 20px;
+    border-radius: 0 0 20px 20px;
+    background: linear-gradient(
+        145deg,
+        rgba(62, 39, 100, 0.94),
+        rgba(105, 70, 143, 0.96)
+    );
+    animation: memoryReveal 0.55s ease both;
+}
+
+.memory-card-message p {
+    color: #fff0ff;
+    font-size: 14px;
+    line-height: 1.9;
+    text-align: center;
+}
+
+/* ENDING */
+
+.universe-ending {
+    margin-top: 45px;
+    color: #f5dcff;
+    font-size: 15px;
+    line-height: 2;
+    text-shadow: 0 0 12px rgba(236, 190, 255, 0.7);
+}
+
+.universe-ending span {
+    display: block;
+    font-size: 23px;
+    margin-top: 10px;
+    color: #ffd9f5;
+}
+
+/* ANIMATIONS */
+
+@keyframes memoryFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+@keyframes memoryReveal {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 600px) {
+
+    .universe-cards {
+        padding: 75px 15px 55px;
+    }
+
+    .universe-label {
+        font-size: 10px;
+        letter-spacing: 2.5px;
+    }
+
+    .universe-description {
+        font-size: 14px;
+        margin-bottom: 32px;
+    }
+
+    .memory-cards-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        max-width: 380px;
+    }
+
+    .memory-card-trigger {
+        min-height: 185px;
+    }
+
+    .memory-card-title {
+        font-size: 16px;
+    }
+
+    .universe-ending {
+        font-size: 13px;
+    }
+  }
+/* =========================================
+   PART 5 : FIVE-STAR CONSTELLATION
+========================================= */
+
+.constellation-section {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    padding: 85px 18px 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.constellation-section[hidden],
+.star-message-box[hidden],
+.constellation-complete[hidden] {
+    display: none !important;
+}
+
+.constellation-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 850px;
+    text-align: center;
+    margin: auto;
+}
+
+.constellation-label {
+    color: #ead5ff;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 17px;
+    text-shadow: 0 0 12px #e7baff;
+}
+
+.constellation-content h2 {
+    color: #fff0ff;
+    font-size: clamp(29px, 6vw, 46px);
+    letter-spacing: 3px;
+    font-weight: 600;
+    text-shadow:
+        0 0 12px #e5b8ff,
+        0 0 30px #bd8bff;
+}
+
+.constellation-decoration {
+    color: #f7d8ff;
+    font-size: 20px;
+    margin: 17px 0;
+    text-shadow: 0 0 12px #eabaff;
+}
+
+.constellation-description {
+    color: #f1e4ff;
+    font-size: 15px;
+    line-height: 1.9;
+    max-width: 520px;
+    margin: 0 auto 25px;
+}
+
+/* CONSTELLATION MAP */
+
+.constellation-map {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    height: 330px;
+    margin: 25px auto 35px;
+    overflow: visible;
+}
+
+.constellation-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.constellation-line {
+    stroke: #f2c9ff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-dasharray: 7 8;
+    opacity: 0;
+    filter: drop-shadow(0 0 5px #e8aaff);
+    transition: opacity 0.7s ease;
+}
+
+.constellation-line.active {
+    opacity: 0.9;
+}
+
+/* FIVE STARS */
+
+.constellation-star {
+    position: absolute;
+    z-index: 2;
+    width: 55px;
+    height: 55px;
+    border: 1px solid rgba(240, 210, 255, 0.35);
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(199, 151, 255, 0.25),
+        rgba(85, 55, 130, 0.55)
+    );
+    color: #b99bca;
+    font-size: 29px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:
+        transform 0.35s ease,
+        color 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.constellation-star:hover {
+    transform: scale(1.2);
+    color: #fff0ff;
+}
+
+.constellation-star.unlocked {
+    color: #fff4b0;
+    background: radial-gradient(
+        circle,
+        #fff2bb,
+        #d8a9ff 45%,
+        rgba(130, 79, 190, 0.7)
+    );
+    border-color: #ffe9ff;
+    box-shadow:
+        0 0 12px #ffe7ff,
+        0 0 28px #e6aaff,
+        0 0 48px rgba(207, 150, 255, 0.7);
+    animation: starUnlock 0.7s ease;
+}
+
+.star-one {
+    left: 50%;
+    top: 2%;
+    transform: translateX(-50%);
+}
+
+.star-two {
+    left: 78%;
+    top: 32%;
+}
+
+.star-three {
+    left: 66%;
+    top: 74%;
+}
+
+.star-four {
+    left: 28%;
+    top: 74%;
+}
+
+.star-five {
+    left: 16%;
+    top: 32%;
+}
+
+.star-one:hover {
+    transform: translateX(-50%) scale(1.2);
+}
+
+/* STAR MESSAGE */
+
+.star-message-box {
+    max-width: 560px;
+    margin: 10px auto 25px;
+    padding: 30px 25px;
+    border: 1px solid rgba(241, 210, 255, 0.65);
+    border-radius: 22px;
+    background: linear-gradient(
+        145deg,
+        rgba(76, 47, 116, 0.88),
+        rgba(125, 81, 157, 0.85)
+    );
+    box-shadow:
+        0 0 22px rgba(222, 170, 255, 0.3),
+        inset 0 0 20px rgba(255, 220, 255, 0.07);
+    animation: memoryReveal 0.55s ease both;
+}
+
+.star-message-number {
+    color: #f0caff;
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 13px;
+}
+
+.star-message-box h3 {
+    color: #fff1ff;
+    font-size: 21px;
+    letter-spacing: 1px;
+    margin-bottom: 17px;
+    text-shadow: 0 0 12px #d9aaff;
+}
+
+.star-message-text {
+    color: #f9edff;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.star-message-decoration {
+    display: block;
+    color: #ffd9f6;
+    font-size: 21px;
+    margin-top: 20px;
+}
+
+/* PROGRESS */
+
+.constellation-progress {
+    color: #ead1ff;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin: 25px auto;
+    text-shadow: 0 0 10px #d8a5ff;
+}
+
+/* COMPLETED CONSTELLATION */
+
+.constellation-complete {
+    max-width: 550px;
+    margin: 30px auto 0;
+    padding: 30px 22px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 224, 255, 0.65);
+    background: linear-gradient(
+        145deg,
+        rgba(94, 56, 134, 0.8),
+        rgba(145, 93, 166, 0.78)
+    );
+    box-shadow:
+        0 0 25px rgba(238, 190, 255, 0.35),
+        0 0 55px rgba(184, 135, 255, 0.2);
+    animation: memoryReveal 0.8s ease both;
+}
+
+.constellation-complete h3 {
+    color: #fff0ff;
+    font-size: 19px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.constellation-complete p {
+    color: #f5e5ff;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.constellation-complete span {
+    display: block;
+    color: #ffe0fa;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-top: 20px;
+}
+
+/* ANIMATIONS */
+
+@keyframes starUnlock {
+    0% {
+        transform: scale(0.7);
+        opacity: 0.5;
+    }
+
+    70% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes completeGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 8px #e6baff);
+        transform: scale(1);
+    }
+
+    50% {
+        filter: drop-shadow(0 0 22px #ffe6ff);
+        transform: scale(1.12);
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .constellation-section {
+        padding: 70px 15px 55px;
+    }
+
+    .constellation-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .constellation-description {
+        font-size: 13px;
+    }
+
+    .constellation-map {
+        height: 270px;
+        max-width: 380px;
+        margin: 20px auto 25px;
+    }
+
+    .constellation-star {
+        width: 47px;
+        height: 47px;
+        font-size: 25px;
+    }
+
+    .star-message-box {
+        padding: 25px 17px;
+    }
+
+    .star-message-box h3 {
+        font-size: 18px;
+    }
+
+    .star-message-text {
+        font-size: 14px;
+    }
+}
+
+/* UNIVERSE TO CONSTELLATION BUTTON */
+
+#open-constellation {
+    margin-top: 25px;
+    padding: 14px 25px;
+    border: 1px solid rgba(255, 225, 255, 0.8);
+    border-radius: 30px;
+    background: linear-gradient(135deg, #8f68b5, #68458f);
+    color: #fff4ff;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    box-shadow: 0 0 18px rgba(218, 174, 255, 0.35);
+    transition: 0.3s ease;
+}
+
+#open-constellation:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 28px rgba(237, 197, 255, 0.65);
+}
+
+/* =========================================
+   PART 6 — THE SECRET GARDEN
+========================================= */
+
+.secret-garden-section {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    padding: 80px 20px;
+    overflow: hidden;
+    text-align: center;
+    background:
+        radial-gradient(ellipse at 50% 75%, rgba(190, 145, 220, 0.25), transparent 60%),
+        linear-gradient(145deg, #211631, #39264e, #49345f);
+    color: #fff4ff;
+}
+
+.secret-garden-section[hidden] {
+    display: none !important;
+}
+
+.garden-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: auto;
+}
+
+.garden-label {
+    color: #e7c9ff;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 18px;
+}
+
+.garden-title {
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 7vw, 65px);
+    font-weight: normal;
+    color: #f5e5ff;
+    text-shadow: 0 0 20px rgba(224, 174, 255, 0.7);
+    margin-bottom: 18px;
+}
+
+.garden-description {
+    max-width: 580px;
+    margin: 0 auto;
+    color: #e6d6f0;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.garden-scene {
+    position: relative;
+    height: 340px;
+    max-width: 700px;
+    margin: 35px auto 20px;
+    border-radius: 25px;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 50% 100%, rgba(132, 91, 155, 0.45), transparent 65%),
+        linear-gradient(180deg, rgba(71, 48, 96, 0.2), rgba(25, 35, 45, 0.5));
+    border: 1px solid rgba(236, 204, 255, 0.2);
+    box-shadow: 0 0 35px rgba(190, 135, 230, 0.15);
+}
+
+.garden-glow {
+    position: absolute;
+    width: 280px;
+    height: 150px;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    background: rgba(204, 153, 255, 0.18);
+    filter: blur(55px);
+}
+
+.garden-flower {
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+    user-select: none;
+    animation: gardenFlowerFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 12px rgba(255, 190, 255, 0.65));
+}
+
+.flower-petals {
+    font-size: 65px;
+    color: #f3c5ff;
+    text-shadow: 0 0 18px #e9aaff;
+}
+
+.flower-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff1b8;
+    font-size: 22px;
+}
+
+.flower-one {
+    left: 12%;
+    bottom: 35px;
+}
+
+.flower-two {
+    left: 32%;
+    bottom: 85px;
+    animation-delay: 0.5s;
+}
+
+.flower-three {
+    left: 51%;
+    bottom: 30px;
+    animation-delay: 1s;
+}
+
+.flower-four {
+    right: 20%;
+    bottom: 90px;
+    animation-delay: 1.5s;
+}
+
+.flower-five {
+    right: 5%;
+    bottom: 35px;
+    animation-delay: 0.8s;
+}
+
+.garden-flower:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 22px #f3c5ff);
+}
+
+.garden-butterfly {
+    position: absolute;
+    z-index: 3;
+    font-size: 27px;
+    filter: drop-shadow(0 0 10px #e8baff);
+    animation: gardenButterflyFloat 7s ease-in-out infinite;
+}
+
+.butterfly-one {
+    top: 18%;
+    left: 15%;
+}
+
+.butterfly-two {
+    top: 30%;
+    right: 18%;
+    animation-delay: 2s;
+}
+
+.butterfly-three {
+    top: 10%;
+    left: 55%;
+    animation-delay: 4s;
+}
+
+.garden-hint {
+    color: #e9d4f7;
+    font-size: 14px;
+    margin: 22px 0;
+    letter-spacing: 0.5px;
+}
+
+.garden-surprise {
+    max-width: 550px;
+    margin: 25px auto;
+    padding: 25px;
+    border: 1px solid rgba(239, 206, 255, 0.35);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 25px rgba(204, 153, 255, 0.15);
+    animation: gardenReveal 0.7s ease;
+}
+
+.garden-surprise[hidden] {
+    display: none !important;
+}
+
+.garden-surprise h2 {
+    font-family: Georgia, serif;
+    color: #f4d5ff;
+    margin-bottom: 12px;
+}
+
+.garden-surprise p {
+    color: #f0e3f7;
+    line-height: 1.8;
+}
+
+.garden-next-button {
+    margin-top: 25px;
+    padding: 14px 30px;
+    border: 1px solid rgba(244, 211, 255, 0.65);
+    border-radius: 30px;
+    background: linear-gradient(135deg, #a77bc5, #79549e);
+    color: white;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(205, 157, 245, 0.3);
+    transition: 0.3s ease;
+}
+
+.garden-next-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 30px rgba(225, 184, 255, 0.6);
+}
+
+@keyframes gardenFlowerFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes gardenButterflyFloat {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(22px, -25px) rotate(12deg);
+    }
+}
+
+@keyframes gardenReveal {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .garden-scene {
+        height: 290px;
+    }
+
+    .flower-petals {
+        font-size: 48px;
+    }
+
+    .garden-butterfly {
+        font-size: 22px;
+    }
+
+    .garden-description {
+        font-size: 14px;
+    }
+}
+
+.garden-flower-active {
+    transform: scale(1.25);
+    filter: drop-shadow(0 0 25px #f4c5ff);
+}
+
+.garden-flower-active .flower-petals {
+    color: #fff0ff;
+      }
+/* =========================================
+   GIFT BOX — MAGICAL ANIMATION
+========================================= */
+
+#gift-box {
+    position: relative;
+}
+
+#gift-box .gift-box-wrapper {
+    position: relative;
+    width: 190px;
+    height: 190px;
+    margin: 65px auto 35px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+#gift-box .gift-box-wrapper:hover {
+    transform: scale(1.06);
+}
+
+#gift-box .gift-box-body {
+    position: absolute;
+    bottom: 0;
+    width: 190px;
+    height: 130px;
+    border-radius: 8px 8px 15px 15px;
+    background: linear-gradient(135deg, #e9a0e7, #a66bc9);
+    box-shadow: 0 12px 30px rgba(80, 35, 110, 0.3);
+}
+
+#gift-box .gift-box-body::before {
+    content: "";
+    position: absolute;
+    left: 75px;
+    width: 40px;
+    height: 100%;
+    background: linear-gradient(90deg, #ffe6a8, #fff2cc);
+}
+
+#gift-box #gift-box-lid {
+    position: absolute;
+    top: 0;
+    left: -12px;
+    width: 214px;
+    height: 48px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #f4b5ec, #bd83dc);
+    box-shadow: 0 6px 15px rgba(80, 35, 110, 0.25);
+    z-index: 2;
+    transition: transform 0.8s ease;
+}
+
+#gift-box #gift-box-lid::before {
+    content: "";
+    position: absolute;
+    left: 87px;
+    width: 40px;
+    height: 100%;
+    background: #fff0c9;
+}
+
+#gift-box #gift-box-lid::after {
+    content: "🎀";
+    position: absolute;
+    top: -35px;
+    left: 75px;
+    font-size: 48px;
+}
+
+#gift-box #gift-box-lid.gift-lid-open {
+    transform: translateY(-85px) rotate(-15deg);
+}
+
+#gift-box .gift-box-wrapper.gift-open .gift-box-body {
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
+}
+
+#gift-surprise {
+    width: min(90%, 550px);
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+}
+
+/* =========================================
+   BIRTHDAY CAKE
+========================================= */
+
+#birthday-cake-animation {
+    position: relative;
+    width: 260px;
+    height: 230px;
+    margin: 35px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#birthday-cake-animation .cake-layer {
+    position: relative;
+    width: 220px;
+    height: 65px;
+    border-radius: 12px 12px 18px 18px;
+    background: linear-gradient(135deg, #f6b9df, #d98bc8);
+    border-bottom: 8px solid #b96cae;
+    box-shadow: 0 8px 15px rgba(80, 35, 110, 0.2);
+}
+
+#birthday-cake-animation .cake-layer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 18px;
+    border-radius: 50%;
+    background: #fff0f7;
+}
+
+#birthday-cake-animation .candle {
+    position: absolute;
+    bottom: 135px;
+    width: 13px;
+    height: 55px;
+    border-radius: 5px;
+    background: repeating-linear-gradient(
+        45deg,
+        #fff,
+        #fff 5px,
+        #d69be9 5px,
+        #d69be9 10px
+    );
+}
+
+#birthday-cake-animation .candle:nth-child(1) {
+    left: 90px;
+}
+
+#birthday-cake-animation .candle:nth-child(2) {
+    left: 124px;
+}
+
+#birthday-cake-animation .candle:nth-child(3) {
+    left: 158px;
+}
+
+#birthday-cake-animation .candle::before {
+    content: "";
+    position: absolute;
+    top: -22px;
+    left: 1px;
+    width: 12px;
+    height: 20px;
+    border-radius: 50% 50% 50% 0;
+    background: radial-gradient(circle at 40% 65%, #fff9a8, #ffad43, #ff6b35);
+    transform: rotate(-45deg);
+    animation: candleFlame 0.7s infinite alternate;
+}
+
+#birthday-cake-animation .candle.candle-blown::before {
+    display: none;
+}
+
+@keyframes candleFlame {
+    from {
+        transform: rotate(-45deg) scale(0.9);
+        opacity: 0.8;
+    }
+
+    to {
+        transform: rotate(-40deg) scale(1.1);
+        opacity: 1;
+    }
+}
+
+#birthday-cake-animation.wish-made {
+    animation: cakeWish 1s ease;
+}
+
+@keyframes cakeWish {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+        filter: drop-shadow(0 0 25px white);
+    }
+}
+
+#birthday-message {
+    width: min(90%, 600px);
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+/* =========================================
+   GRAND FINALE
+========================================= */
+
+#grand-finale {
+    background: radial-gradient(
+        circle,
+        rgba(255, 220, 250, 0.3),
+        transparent 75%
+    );
+}
+
+#cake-cutting-animation {
+    position: relative;
+    margin: 35px auto;
+    transition: transform 1s ease;
+}
+
+#cake-cutting-animation.cake-cutting {
+    animation: cakeCutting 1.5s ease;
+}
+
+#cake-cutting-animation .finale-cake {
+    font-size: 100px;
+    display: inline-block;
+    transition: transform 1s ease;
+}
+
+#cake-cutting-animation .finale-cake.finale-cake-cut {
+    transform: rotate(-12deg) scale(1.15);
+    filter: drop-shadow(0 0 25px white);
+}
+
+@keyframes cakeCutting {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+/* CONFETTI */
+
+.finale-confetti {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.confetti-piece {
+    position: absolute;
+    top: -20px;
+    width: 9px;
+    height: 15px;
+    border-radius: 3px;
+    background: #fff;
+    animation: confettiFall 4s linear forwards;
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(-20px) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* FINAL CREDIT */
+
+#grand-finale h2 {
+    text-shadow: 0 0 20px white, 0 0 35px #e9baff;
+}
+
+#grand-finale .final-credit {
+    margin-top: 35px;
+    letter-spacing: 4px;
+    font-size: 1rem;
+    color: #fff;
+    text-shadow: 0 0 15px white;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 600px) {
+
+    #gift-box .gift-box-wrapper {
+        transform: scale(0.85);
+    }
+
+    #birthday-cake-animation {
+        transform: scale(0.85);
+    }
+
+    #cake-cutting-animation .finale-cake {
+        font-size: 75px;
+    }
+
+    #gift-surprise,
+    #birthday-message {
+        padding: 20px;
+    }
+
+    #grand-finale h2 {
+        font-size: 2rem;
+    }
+}
+
+/* =========================================
+   MAGICAL BUTTON FIX
+   FANTASY WONDERLAND
+========================================= */
+
+/* COMMON MAGICAL BUTTONS */
+
+#open-secret-garden,
+#garden-next,
+#open-gift-button,
+#continue-to-cake,
+#make-wish,
+#cake-continue,
+#open-constellation,
+#next-chapter,
+#continue-journey,
+#discover-secret,
+#open-letter {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: auto;
+    min-width: 210px;
+    max-width: 90%;
+
+    min-height: 52px;
+    height: auto;
+
+    padding: 15px 26px;
+
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 50px;
+
+    background: linear-gradient(
+        135deg,
+        #a66bc2,
+        #d18acb,
+        #b77acb
+    );
+
+    color: #ffffff;
+
+    font-family: Georgia, serif;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+
+    text-align: center;
+    line-height: 1.5;
+
+    box-shadow:
+        0 5px 20px rgba(93, 43, 126, 0.25),
+        inset 0 1px 5px rgba(255, 255, 255, 0.35);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+/* BUTTON HOVER */
+
+#open-secret-garden:hover,
+#garden-next:hover,
+#open-gift-button:hover,
+#continue-to-cake:hover,
+#make-wish:hover,
+#cake-continue:hover,
+#open-constellation:hover,
+#next-chapter:hover,
+#continue-journey:hover,
+#discover-secret:hover,
+#open-letter:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 9px 25px rgba(93, 43, 126, 0.35),
+        0 0 15px rgba(255, 255, 255, 0.45);
+
+    background: linear-gradient(
+        135deg,
+        #bd83d6,
+        #e3a5dc,
+        #c58cdb
+    );
+}
+
+/* BUTTON CLICK */
+
+#open-secret-garden:active,
+#garden-next:active,
+#open-gift-button:active,
+#continue-to-cake:active,
+#make-wish:active,
+#cake-continue:active,
+#open-constellation:active,
+#next-chapter:active,
+#continue-journey:active,
+#discover-secret:active,
+#open-letter:active {
+
+    transform: scale(0.97);
+}
+
+/* DISABLED BUTTON */
+
+#open-gift-button:disabled,
+#make-wish:disabled {
+
+    opacity: 0.75;
+    cursor: default;
+    transform: none;
+}
+
+/* MOBILE BUTTON SIZE */
+
+@media (max-width: 600px) {
+
+    #open-secret-garden,
+    #garden-next,
+    #open-gift-button,
+    #continue-to-cake,
+    #make-wish,
+    #cake-continue,
+    #open-constellation,
+    #next-chapter,
+    #continue-journey,
+    #discover-secret,
+    #open-letter {
+
+        min-width: 190px;
+        max-width: 92%;
+
+        padding: 13px 19px;
+
+        font-size: 13px;
+        letter-spacing: 0.8px;
+    }
+}
+
+/* =========================================
+   TYPOGRAPHY REFINEMENT
+   SECRET GARDEN + GRAND FINALE
+========================================= */
+
+/* PREVENT MOBILE HORIZONTAL OVERFLOW */
+
+#secret-garden,
+#grand-finale {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* CENTER CONTENT CONTAINERS */
+
+#secret-garden > *,
+#grand-finale > * {
+    width: 100%;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+/* HEADINGS */
+
+#secret-garden h1,
+#secret-garden h2,
+#grand-finale h1,
+#grand-finale h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(27px, 7vw, 42px);
+    line-height: 1.3;
+    letter-spacing: 1.5px;
+    text-align: center;
+    color: #fffaff;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    text-shadow: 0 2px 12px rgba(91, 48, 119, 0.25);
+}
+
+/* PARAGRAPHS */
+
+#secret-garden p,
+#grand-finale p {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(16px, 4.2vw, 21px);
+    line-height: 1.8;
+    letter-spacing: 0.2px;
+    text-align: center;
+    color: #fffaff;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-wrap: break-word;
+    text-shadow: 0 1px 7px rgba(80, 40, 110, 0.22);
+}
+
+/* SMALL LABELS */
+
+#secret-garden .garden-label,
+#grand-finale .finale-label {
+    font-size: 13px;
+    line-height: 1.8;
+    letter-spacing: 3px;
+    text-align: center;
+    color: #fff5ff;
+}
+
+/* FINALE MESSAGE */
+
+#grand-finale .finale-content {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* MOBILE REFINEMENT */
+
+@media (max-width: 600px) {
+
+    #secret-garden,
+    #grand-finale {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    #secret-garden h1,
+    #secret-garden h2,
+    #grand-finale h1,
+    #grand-finale h2 {
+        font-size: 29px;
+        line-height: 1.35;
+        letter-spacing: 0.8px;
+    }
+
+    #secret-garden p,
+    #grand-finale p {
+        font-size: 17px;
+        line-height: 1.75;
+        letter-spacing: 0;
+    }
+
+    .garden-flower {
+        width: 75px;
+        height: 75px;
+        font-size: 34px;
+    }
+
+    #secret-garden .garden-flowers {
+        gap: 15px;
+    }
+}
+
+/* SECRET GARDEN - FLOWER OVERLAP FIX */
+
+#secret-garden .garden-flowers {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    justify-items: center !important;
+    align-items: center !important;
+    position: relative !important;
+    gap: 25px !important;
+}
+
+#secret-garden .garden-flowers .garden-flower {
+    position: relative !important;
+    inset: auto !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none;
+    margin: 0 !important;
+    z-index: 2;
+}
+
+#secret-garden .garden-flowers .garden-flower-active {
+    transform: scale(1.12) !important;
+}
+
+@media (max-width: 380px) {
+
+    #secret-garden .garden-flowers {
+        gap: 15px !important;
+    }
+}
+
+/* STEP 1 — DREAMY ATMOSPHERE */
+
+.dreamy-glow {
+    filter: blur(18px) saturate(1.2);
+    opacity: 0.65;
+}
+
+/* SECRET GARDEN — REMOVE WHITE FLOWER BUTTON BOX */
+
+#secret-garden .garden-flower,
+#secret-garden .garden-flowers button {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    padding: 0 !important;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+/* Remove tap highlight on mobile */
+#secret-garden .garden-flower,
+#secret-garden .garden-flowers button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================
+   GLOBAL FAIRY MAGIC — ENTIRE WEBSITE
+========================================= */
+
+#global-fairy-magic {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 20;
+    isolation: isolate;
+}
+
+/* FAIRIES */
+
+.global-fairy {
+    position: absolute;
+    left: -12%;
+    top: var(--top);
+    font-size: var(--size);
+    opacity: 0;
+    filter: drop-shadow(0 0 9px rgba(255, 220, 255, 0.9));
+    animation: fairyFly var(--duration) linear var(--delay) infinite;
+    white-space: nowrap;
+    will-change: transform;
+}
+
+/* GLOWING FLOWERS */
+
+.global-flower {
+    position: absolute;
+    left: -10%;
+    top: var(--top);
+    font-size: var(--size);
+    opacity: 0;
+    filter:
+        drop-shadow(0 0 5px #fff0ff)
+        drop-shadow(0 0 12px #ffb9e8);
+    animation: flowerFly var(--duration) linear var(--delay) infinite;
+    white-space: nowrap;
+    will-change: transform;
+}
+
+/* MAGICAL FAIRY DUST */
+
+.global-dust {
+    position: absolute;
+    left: var(--left);
+    top: var(--top);
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background: #fff2b8;
+    box-shadow:
+        0 0 5px #fff,
+        0 0 12px #ffe5a3,
+        0 0 20px #ffc8ed;
+    opacity: 0;
+    animation: dustTwinkle var(--duration) ease-in-out var(--delay) infinite;
+}
+
+/* FAIRY MOVEMENT */
+
+@keyframes fairyFly {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(-8deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.9;
+    }
+
+    50% {
+        transform: translate3d(55vw, -35px, 0) rotate(8deg);
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: translate3d(125vw, 25px, 0) rotate(-8deg);
+        opacity: 0;
+    }
+}
+
+/* FLOWER MOVEMENT */
+
+@keyframes flowerFly {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+        opacity: 0;
+    }
+
+    12% {
+        opacity: 0.75;
+    }
+
+    50% {
+        transform: translate3d(55vw, -25px, 0) rotate(100deg);
+        opacity: 0.9;
+    }
+
+    88% {
+        opacity: 0.75;
+    }
+
+    100% {
+        transform: translate3d(120vw, 20px, 0) rotate(220deg);
+        opacity: 0;
+    }
+}
+
+/* DUST TWINKLING */
+
+@keyframes dustTwinkle {
+    0%, 100% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.4);
+        opacity: 0.9;
+    }
+}
+
+/* MOBILE REFINEMENT */
+
+@media (max-width: 600px) {
+    .global-fairy {
+        font-size: calc(var(--size) * 0.8);
+    }
+
+    .global-flower {
+        font-size: calc(var(--size) * 0.8);
+    }
+}
+
+/* REDUCED MOTION ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    .global-fairy,
+    .global-flower,
+    .global-dust {
+        animation: none !important;
+        display: none !important;
+    }
+}
+
+/* =========================================
+   GLOBAL FAIRY MAGIC
+   FAIRIES + GLOWING FLOWERS + MAGICAL DUST
+   ========================================= */
+
+#global-fairy-magic {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 3;
+    isolation: isolate;
+}
+
+/* LAYERS */
+
+.fairy-flight-layer,
+.flower-flight-layer,
+.fairy-dust-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* FAIRIES */
+
+.global-fairy {
+    position: absolute;
+    left: -15%;
+    top: var(--top);
+    font-size: var(--size);
+    opacity: 0;
+
+    filter:
+        drop-shadow(0 0 8px rgba(255, 220, 255, 0.9))
+        drop-shadow(0 0 18px rgba(210, 160, 255, 0.7));
+
+    animation:
+        fairyFly var(--duration) linear var(--delay) infinite;
+    will-change: transform, opacity;
+}
+
+@keyframes fairyFly {
+
+    0% {
+        transform: translate3d(-10vw, 0, 0) rotate(-12deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.85;
+    }
+
+    25% {
+        transform: translate3d(30vw, -35px, 0) rotate(10deg);
+    }
+
+    50% {
+        transform: translate3d(60vw, 25px, 0) rotate(-8deg);
+        opacity: 0.9;
+    }
+
+    75% {
+        transform: translate3d(100vw, -30px, 0) rotate(12deg);
+    }
+
+    90% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translate3d(120vw, 15px, 0) rotate(-10deg);
+        opacity: 0;
+    }
+}
+
+
+/* FLOATING FLOWERS */
+
+.global-flower {
+    position: absolute;
+    left: -12%;
+    top: var(--top);
+    font-size: var(--size);
+    opacity: 0;
+
+    filter:
+        drop-shadow(0 0 7px rgba(255, 190, 230, 0.8))
+        drop-shadow(0 0 14px rgba(255, 220, 245, 0.5));
+
+    animation:
+        flowerFly var(--duration) linear var(--delay) infinite;
+    will-change: transform, opacity;
+}
+
+@keyframes flowerFly {
+
+    0% {
+        transform: translate3d(-10vw, 0, 0) rotate(0deg);
+        opacity: 0;
+    }
+
+    12% {
+        opacity: 0.75;
+    }
+
+    30% {
+        transform: translate3d(30vw, -45px, 0) rotate(100deg);
+    }
+
+    50% {
+        transform: translate3d(60vw, 25px, 0) rotate(190deg);
+        opacity: 0.85;
+    }
+
+    75% {
+        transform: translate3d(95vw, -35px, 0) rotate(280deg);
+    }
+
+    90% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translate3d(120vw, 15px, 0) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* MAGICAL DUST */
+
+.global-dust {
+    position: absolute;
+    left: var(--left);
+    top: var(--top);
+
+    width: var(--size);
+    height: var(--size);
+
+    border-radius: 50%;
+
+    background: #fff5c7;
+
+    box-shadow:
+        0 0 5px 2px rgba(255, 230, 160, 0.8),
+        0 0 12px 4px rgba(255, 210, 130, 0.45);
+
+    animation:
+        dustTwinkle var(--duration) ease-in-out var(--delay) infinite;
+
+    will-change: opacity, transform;
+}
+
+@keyframes dustTwinkle {
+
+    0%, 100% {
+        opacity: 0.12;
+        transform: scale(0.5);
+    }
+
+    50% {
+        opacity: 0.95;
+        transform: scale(1.6);
+    }
+}
+
+
+/* MOBILE OPTIMIZATION */
+
+@media (max-width: 600px) {
+
+    .global-fairy {
+        filter:
+            drop-shadow(0 0 6px rgba(255, 220, 255, 0.8));
+    }
+
+    .global-flower {
+        filter:
+            drop-shadow(0 0 6px rgba(255, 190, 230, 0.7));
+    }
+
+}
+
+
+/* REDUCED MOTION SUPPORT */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .global-fairy,
+    .global-flower,
+    .global-dust {
+        animation: none !important;
+        opacity: 0.25;
+    }
+
+      }
+      
