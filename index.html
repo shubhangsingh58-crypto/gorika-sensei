@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gorika Sensei | Fantasy Wonderland</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <!-- DREAMY FAIRYTALE BACKGROUND -->
+
+    <div class="fairytale-background">
+
+        <div class="dreamy-glow"></div>
+
+        <div class="cloud cloud-one"></div>
+        <div class="cloud cloud-two"></div>
+        <div class="cloud cloud-three"></div>
+
+        <div id="stars-container"></div>
+        <div id="butterflies-container"></div>
+        <div id="meteors-container"></div>
+
+    </div>
+
+
+    <!-- GLOBAL FAIRY MAGIC LAYER -->
+
+    <div id="global-fairy-magic" aria-hidden="true">
+
+        <div class="fairy-flight-layer"></div>
+
+        <div class="flower-flight-layer"></div>
+
+        <div class="fairy-dust-layer"></div>
+
+    </div>
+
+
+    <!-- PART 1 : MAGICAL ENTRANCE -->
+
+    <main class="entrance">
+
+        <div class="entrance-content">
+
+            <p class="welcome-label">
+                ✧ A LITTLE WORLD OF MAGIC ✧
+            </p>
+
+            <h1>GORIKA SENSEI</h1>
+
+            <div class="title-decoration">
+                ✧ ───── ♡ ───── ✧
+            </div>
+
+            <p class="entrance-description">
+                Somewhere between dreams and stars,
+                a beautiful little wonderland is waiting for you...
+            </p>
+
+            <button id="enter-world">
+                ENTER THE FANTASY WONDERLAND
+                <span>✧</span>
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- PART 2 : SURPRISE REVEAL -->
+
+    <section class="surprise-reveal" id="surprise-reveal" hidden>
+
+        <div class="reveal-content">
+
+            <p class="reveal-label">
+                ✧ A MAGICAL PLACE MADE JUST FOR YOU ✧
+            </p>
+
+            <h2>WELCOME TO YOUR WONDERLAND</h2>
+
+            <div class="reveal-decoration">
+                ✧ ───── ♡ ───── ✧
+            </div>
+
+            <p class="reveal-description">
+                Every star has a story,
+                every flower holds a little magic,
+                and every corner of this world
+                has something special waiting for you...
+            </p>
+
+            <button id="discover-secret">
+                DISCOVER A LITTLE SECRET
+                <span>✧</span>
+            </button>
+
+            <!-- SECRET MESSAGE -->
+
+            <div class="secret-message" id="secret-message" hidden>
+
+                <div class="secret-flower">🌸</div>
+
+                <h3>A LITTLE SECRET FOR YOU</h3>
+
+                <p>
+                    Some bonds don't need distance to disappear,
+                    and some people become special without
+                    even being nearby.
+
+                    This little wonderland is one small way
+                    of saying how special you are.
+                </p>
+
+                <button id="continue-journey">
+                    CONTINUE YOUR JOURNEY
+                    <span>✧</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PART 3 : ENCHANTED BIRTHDAY LETTER -->
+
+    <section class="birthday-letter" id="birthday-letter" hidden>
+
+        <div class="letter-content">
+
+            <p class="letter-label">
+                ✧ A MESSAGE FROM THE HEART ✧
+            </p>
+
+            <h2>A LETTER FOR YOU</h2>
+
+            <div class="letter-decoration">
+                ✧ ───── ♡ ───── ✧
+            </div>
+
+            <!-- MAGICAL ENVELOPE -->
+
+            <div class="envelope-area" id="envelope-area">
+
+                <div class="envelope" id="envelope">
+
+                    <div class="envelope-back"></div>
+
+                    <div class="envelope-paper">
+                        <span>♡</span>
+                    </div>
+
+                    <div class="envelope-flap"></div>
+
+                    <div class="envelope-front"></div>
+
+                    <div class="envelope-heart">♥</div>
+
+                </div>
+
+                <p class="envelope-hint">
+                    A little letter is waiting for you...
+                </p>
+
+                <button id="open-letter">
+                    OPEN YOUR LETTER
+                    <span>✧</span>
+                </button>
+
+            </div>
+
+            <!-- BIRTHDAY LETTER MESSAGE -->
+
+            <div class="letter-paper" id="letter-paper" hidden>
+
+                <div class="letter-top-flower">🌸</div>
+
+                <h3>Dear Gorika,</h3>
+
+                <p>
+                    On your special day, I just want to tell you
+                    something from my heart.
+
+                    You are someone who holds a very special
+                    place in my life. Even though we haven't
+                    met in person, the bond we share means
+                    a lot to me.
+
+                    I hope your life is always filled with
+                    happiness, beautiful moments, endless
+                    smiles and countless reasons to shine.
+
+                    May every dream you carry find its way
+                    towards becoming reality.
+
+                    Keep being the wonderful person you are.
+
+                    Happy Birthday, Gorika Sensei!
+                </p>
+
+                <div class="letter-signature">
+
+                    With lots of love,
+
+                    <strong>Your Brother,</strong>
+                    <strong>Shubhang ♡</strong>
+
+                </div>
+
+                <button id="next-chapter">
+                    NEXT CHAPTER
+                    <span>✧</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+        <!-- PART 4 : UNIVERSE CARDS -->
+
+    <section class="universe-cards" id="universe-cards" hidden>
+
+        <div class="universe-content">
+
+            <p class="universe-label">
+                ✧ LITTLE MEMORIES, ENDLESS MAGIC ✧
+            </p>
+
+            <h2>OUR LITTLE UNIVERSE</h2>
+
+            <div class="universe-decoration">
+                ✧ ───── ♡ ───── ✧
+            </div>
+
+            <p class="universe-description">
+                Every beautiful bond has a story.
+                And ours has little moments
+                that deserve their own stars...
+            </p>
+
+            <div class="memory-cards-container">
+
+                <!-- MEMORY CARD 1 -->
+
+                <article class="memory-card">
+
+                    <button class="memory-card-trigger"
+                        data-memory="memory-1"
+                        aria-expanded="false">
+
+                        <span class="memory-card-icon">🌟</span>
+
+                        <span class="memory-card-number">
+                            MEMORY 01
+                        </span>
+
+                        <span class="memory-card-title">
+                            OUR FIRST HELLO
+                        </span>
+
+                        <span class="memory-card-hint">
+                            ✧ Click to discover
+                        </span>
+
+                    </button>
+
+                    <div class="memory-card-message"
+                        id="memory-1" hidden>
+
+                        <p>
+                            It all started in a Telegram Study Group.
+                            A simple beginning that neither of us
+                            probably knew would become such a
+                            beautiful part of our story.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- MEMORY CARD 2 -->
+
+                <article class="memory-card">
+
+                    <button class="memory-card-trigger"
+                        data-memory="memory-2"
+                        aria-expanded="false">
+
+                        <span class="memory-card-icon">🦋</span>
+
+                        <span class="memory-card-number">
+                            MEMORY 02
+                        </span>
+
+                        <span class="memory-card-title">
+                            THE HIDDEN IDENTITY
+                        </span>
+
+                        <span class="memory-card-hint">
+                            ✧ Click to discover
+                        </span>
+
+                    </button>
+
+                    <div class="memory-card-message"
+                        id="memory-2" hidden>
+
+                        <p>
+                            At first, I knew you by the name Ayan.
+                            And then came the unexpected truth —
+                            Ayan was Gorika all along!
+                            One little reveal that became
+                            an unforgettable part of our story.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- MEMORY CARD 3 -->
+
+                <article class="memory-card">
+
+                    <button class="memory-card-trigger"
+                        data-memory="memory-3"
+                        aria-expanded="false">
+
+                        <span class="memory-card-icon">🌸</span>
+
+                        <span class="memory-card-number">
+                            MEMORY 03
+                        </span>
+
+                        <span class="memory-card-title">
+                            A LITTLE SURPRISE
+                        </span>
+
+                        <span class="memory-card-hint">
+                            ✧ Click to discover
+                        </span>
+
+                    </button>
+
+                    <div class="memory-card-message"
+                        id="memory-3" hidden>
+
+                        <p>
+                            Some little moments become special
+                            without even trying.
+                            This space is reserved for one
+                            of those memories — a little surprise
+                            from our journey.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- MEMORY CARD 4 -->
+
+                <article class="memory-card">
+
+                    <button class="memory-card-trigger"
+                        data-memory="memory-4"
+                        aria-expanded="false">
+
+                        <span class="memory-card-icon">💜</span>
+
+                        <span class="memory-card-number">
+                            MEMORY 04
+                        </span>
+
+                        <span class="memory-card-title">
+                            A BOND BEYOND DISTANCE
+                        </span>
+
+                        <span class="memory-card-hint">
+                            ✧ Click to discover
+                        </span>
+
+                    </button>
+
+                    <div class="memory-card-message"
+                        id="memory-4" hidden>
+
+                        <p>
+                            We haven't met in person,
+                            yet this bond has its own special meaning.
+                            Because sometimes, a connection
+                            becomes meaningful even across distances.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- MEMORY CARD 5 -->
+
+                <article class="memory-card">
+
+                    <button class="memory-card-trigger"
+                        data-memory="memory-5"
+                        aria-expanded="false">
+
+                        <span class="memory-card-icon">✨</span>
+
+                        <span class="memory-card-number">
+                            MEMORY 05
+                        </span>
+
+                        <span class="memory-card-title">
+                            A SPECIAL PLACE
+                        </span>
+
+                        <span class="memory-card-hint">
+                            ✧ Click to discover
+                        </span>
+
+                    </button>
+
+                    <div class="memory-card-message"
+                        id="memory-5" hidden>
+
+                        <p>
+                            Among all the little chapters of life,
+                            you have your own special place
+                            in my story.
+                            And this little universe is a reminder
+                            of that.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- UNIVERSE ENDING -->
+
+            <div class="universe-ending">
+
+                <p>
+                    Every memory is a little star in our universe.
+                </p>
+
+                <span>♡ ✧ ♡</span>
+
+                <button id="open-constellation">
+                    DISCOVER OUR CONSTELLATION
+                    <span>✧</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PART 5 : FIVE-STAR CONSTELLATION -->
+
+    <section class="constellation-section"
+        id="constellation-section" hidden>
+
+        <div class="constellation-content">
+
+            <p class="constellation-label">
+                ✧ FIVE STARS, ONE BEAUTIFUL BOND ✧
+            </p>
+
+            <h2>OUR CONSTELLATION</h2>
+
+            <div class="constellation-decoration">
+                ✧ ───── ♡ ───── ✧
+            </div>
+
+            <p class="constellation-description">
+                Somewhere in this endless universe,
+                five little stars are holding messages
+                just for you...
+                <br>
+                Unlock each one to discover them.
+            </p>
+
+            <!-- FIVE CONNECTED STARS -->
+
+            <div class="constellation-map"
+                id="constellation-map">
+
+                <svg class="constellation-lines"
+                    viewBox="0 0 500 300"
+                    preserveAspectRatio="none">
+
+                    <line x1="250" y1="35"
+                        x2="390" y2="125"
+                        class="constellation-line"
+                        id="line-1"/>
+
+                    <line x1="390" y1="125"
+                        x2="330" y2="265"
+                        class="constellation-line"
+                        id="line-2"/>
+
+                    <line x1="330" y1="265"
+                        x2="170" y2="265"
+                        class="constellation-line"
+                        id="line-3"/>
+
+                    <line x1="170" y1="265"
+                        x2="110" y2="125"
+                        class="constellation-line"
+                        id="line-4"/>
+
+                    <line x1="110" y1="125"
+                        x2="250" y2="35"
+                        class="constellation-line"
+                        id="line-5"/>
+
+                </svg>
+
+                <button class="constellation-star star-one"
+                    data-star="1"
+                    aria-label="Unlock first star"
+                    aria-expanded="false">
+                    ✦
+                </button>
+
+                <button class="constellation-star star-two"
+                    data-star="2"
+                    aria-label="Unlock second star"
+                    aria-expanded="false">
+                    ✦
+                </button>
+
+                <button class="constellation-star star-three"
+                    data-star="3"
+                    aria-label="Unlock third star"
+                    aria-expanded="false">
+                    ✦
+                </button>
+
+                <button class="constellation-star star-four"
+                    data-star="4"
+                    aria-label="Unlock fourth star"
+                    aria-expanded="false">
+                    ✦
+                </button>
+
+                <button class="constellation-star star-five"
+                    data-star="5"
+                    aria-label="Unlock fifth star"
+                    aria-expanded="false">
+                    ✦
+                </button>
+
+            </div>
+
+
+            <!-- STAR MESSAGE -->
+
+            <div class="star-message-box"
+                id="star-message-box" hidden>
+
+                <p class="star-message-number"
+                    id="star-message-number">
+                    STAR 01
+                </p>
+
+                <h3 id="star-message-title">
+                    A BOND BEYOND DISTANCE
+                </h3>
+
+                <p class="star-message-text"
+                    id="star-message-text">
+                </p>
+
+                <span class="star-message-decoration">
+                    ♡ ✧ ♡
+                </span>
+
+            </div>
+
+
+            <!-- CONSTELLATION PROGRESS -->
+
+            <p class="constellation-progress"
+                id="constellation-progress">
+                0 OF 5 STARS UNLOCKED
+            </p>
+
+
+            <!-- COMPLETION MESSAGE -->
+
+            <div class="constellation-complete"
+                id="constellation-complete" hidden>
+
+                <div class="complete-star">🌟</div>
+
+                <h3>YOUR CONSTELLATION IS COMPLETE!</h3>
+
+                <p>
+                    Five little stars, five special messages,
+                    and one beautiful bond.
+                    May these stars always remind you
+                    how special you are.
+                </p>
+
+                <button id="open-secret-garden" hidden>
+                    ENTER THE SECRET GARDEN
+                    <span>✧</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PART 6 : SECRET GARDEN -->
+
+    <section class="secret-garden" id="secret-garden" hidden>
+
+        <div class="garden-content">
+
+            <p class="garden-label">
+                ✧ WHERE LITTLE FLOWERS HOLD BIG SURPRISES ✧
+            </p>
+
+            <h2>THE SECRET GARDEN</h2>
+
+            <div class="garden-decoration">
+                ✧ ───── ♡ ───── ✧
+            </div>
+
+            <p class="garden-description">
+                A little garden filled with magical flowers.
+                Each flower has a special message waiting for you.
+                Choose one and discover its secret...
+            </p>
+
+            <div class="garden-flowers">
+
+                <button class="garden-flower" type="button"
+                    aria-label="Discover flower one">🌸</button>
+
+                <button class="garden-flower" type="button"
+                    aria-label="Discover flower two">🌷</button>
+
+                <button class="garden-flower" type="button"
+                    aria-label="Discover flower three">🌻</button>
+
+                <button class="garden-flower" type="button"
+                    aria-label="Discover flower four">🌺</button>
+
+                <button class="garden-flower" type="button"
+                    aria-label="Discover flower five">🪻</button>
+
+            </div>
+
+            <p class="garden-ending">
+                Every flower blooms in its own beautiful way. ♡
+            </p>
+
+            <div class="garden-surprise" id="garden-surprise" hidden>
+
+                <div class="garden-surprise-icon">🌷</div>
+
+                <h3 id="garden-surprise-title"></h3>
+
+                <p id="garden-surprise-text"></p>
+
+                <span>♡ ✧ ♡</span>
+
+            </div>
+
+            <button id="garden-next" type="button">
+                DISCOVER YOUR NEXT SURPRISE ✧
+            </button>
+
+        </div>
+
+    </section>
+        <!-- PART 7 : INTERACTIVE GIFT BOX -->
+
+    <section class="gift-box-section"
+        id="gift-box" hidden>
+
+        <div class="gift-content">
+
+            <p class="gift-label">
+                ✧ SOMETHING SPECIAL IS WAITING ✧
+            </p>
+
+            <h2>A LITTLE GIFT FOR YOU</h2>
+
+            <div class="gift-decoration">
+                ✧ ───── ♡ ───── ✧
+            </div>
+
+            <p class="gift-description">
+                A little box of happiness,
+                wrapped with love and filled with magic.
+                Can you guess what's inside?
+            </p>
+
+            <!-- INTERACTIVE GIFT BOX -->
+
+            <div class="gift-box-wrapper"
+                id="gift-box-wrapper">
+
+                <div class="gift-box-lid"
+                    id="gift-box-lid">
+
+                    <div class="gift-ribbon"></div>
+
+                    <div class="gift-bow">
+                        <span class="bow-left"></span>
+                        <span class="bow-right"></span>
+                        <span class="bow-center"></span>
+                    </div>
+
+                </div>
+
+                <div class="gift-box-body">
+
+                    <div class="gift-box-ribbon"></div>
+
+                    <div class="gift-box-heart">♡</div>
+
+                </div>
+
+            </div>
+
+            <button id="open-gift-button">
+                OPEN YOUR GIFT
+                <span>✧</span>
+            </button>
+
+            <!-- GIFT SURPRISE -->
+
+            <div class="gift-surprise"
+                id="gift-surprise" hidden>
+
+                <div class="gift-surprise-icon">🎁</div>
+
+                <h3>A LITTLE SURPRISE FOR YOU!</h3>
+
+                <p>
+                    This gift may be small,
+                    but it carries a whole lot of love.
+
+                    You deserve countless beautiful moments,
+                    endless happiness and a thousand reasons
+                    to smile.
+
+                    Here's one little wish from your brother:
+                    may your world always remain magical!
+                </p>
+
+                <div class="gift-surprise-decoration">
+                    ♡ ✧ ♡
+                </div>
+
+                <button id="continue-to-cake">
+                    LET'S CELEBRATE!
+                    <span>✧</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PART 8 : BIRTHDAY CAKE -->
+
+    <section class="birthday-cake"
+        id="birthday-cake" hidden>
+
+        <div class="cake-content">
+
+            <p class="cake-label">
+                ✧ THE SWEETEST MOMENT ✧
+            </p>
+
+            <h2>HAPPY BIRTHDAY, GORIKA!</h2>
+
+            <div class="cake-decoration">
+                ✧ ───── ♡ ───── ✧
+            </div>
+
+            <p class="cake-description">
+                No birthday celebration is complete
+                without a beautiful cake.
+                Make a wish and let the magic begin!
+            </p>
+
+            <!-- ANIMATED BIRTHDAY CAKE -->
+
+            <div class="birthday-cake-animation"
+                id="birthday-cake-animation">
+
+                <div class="cake-candles">
+
+                    <div class="candle">
+                        <div class="candle-flame"></div>
+                    </div>
+
+                    <div class="candle">
+                        <div class="candle-flame"></div>
+                    </div>
+
+                    <div class="candle">
+                        <div class="candle-flame"></div>
+                    </div>
+
+                </div>
+
+                <div class="cake-top">
+                    <span>♡</span>
+                </div>
+
+                <div class="cake-layer cake-layer-one"></div>
+
+                <div class="cake-layer cake-layer-two"></div>
+
+                <div class="cake-plate"></div>
+
+            </div>
+
+            <button id="make-wish">
+                MAKE A WISH
+                <span>✧</span>
+            </button>
+
+            <!-- BIRTHDAY MESSAGE -->
+
+            <div class="birthday-message"
+                id="birthday-message" hidden>
+
+                <div class="birthday-message-icon">🎂</div>
+
+                <h3>HAPPY BIRTHDAY, GORIKA SENSEI!</h3>
+
+                <p>
+                    May your days be filled with laughter,
+                    your dreams find their wings,
+                    and your life be surrounded
+                    by beautiful moments.
+
+                    Keep shining, keep smiling,
+                    and keep being wonderfully you.
+
+                    Wishing you a magical birthday
+                    and an amazing year ahead!
+                </p>
+
+                <span>♡ With love, Shubhang ♡</span>
+
+                <button id="cake-continue">
+                    ONE LAST SURPRISE
+                    <span>✧</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PART 9 : GRAND FINALE -->
+
+    <section class="grand-finale"
+        id="grand-finale" hidden>
+
+        <div class="finale-content">
+
+            <p class="finale-label">
+                ✧ THE FINAL CHAPTER OF YOUR WONDERLAND ✧
+            </p>
+
+            <h2>FOREVER YOUR SPECIAL DAY</h2>
+
+            <div class="finale-decoration">
+                ✧ ───── ♡ ───── ✧
+            </div>
+
+            <!-- FINAL CAKE CUTTING ANIMATION -->
+
+            <div class="cake-cutting-animation"
+                id="cake-cutting-animation">
+
+                <div class="finale-cake">
+
+                    <div class="finale-cake-candles">
+                        🕯️ 🕯️ 🕯️
+                    </div>
+
+                    <div class="finale-cake-top">
+                        ♡
+                    </div>
+
+                    <div class="finale-cake-layer"></div>
+
+                    <div class="finale-cake-base"></div>
+
+                </div>
+
+            </div>
+
+            <!-- FINAL BIRTHDAY MESSAGE -->
+
+            <div class="finale-message">
+
+                <div class="finale-heart">💜</div>
+
+                <h3>DEAR GORIKA,</h3>
+
+                <p>
+                    This little wonderland may come to an end,
+                    but the beautiful memories and moments
+                    will always have a special place.
+
+                    I hope this birthday brings you
+                    happiness, peace, success,
+                    and everything your heart wishes for.
+
+                    Never stop shining like the stars.
+
+                    Happy Birthday once again!
+                </p>
+
+                <div class="finale-signature">
+
+                    With lots of love,
+
+                    <strong>Your Brother,</strong>
+
+                    <strong>Shubhang ♡</strong>
+
+                </div>
+
+            </div>
+
+            <!-- FINAL CREDIT -->
+
+            <div class="final-credit">
+
+                <div class="final-credit-decoration">
+                    ✧ ───── ♡ ───── ✧
+                </div>
+
+                <p>A LITTLE WORLD CREATED WITH LOVE</p>
+
+                <h3>MADE BY SHUBHANG</h3>
+
+                <span>♡ GORIKA SENSEI ♡</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="./js/Style.js"></script>
+
+</body>
+
+</html>
